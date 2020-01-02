@@ -1,0 +1,33 @@
+{
+
+  "manifest_version": 2,
+  "name": "Save Reader Mode",
+  "version": "1.0",
+
+  "description": "Parses page with readability mode then saves to API",
+
+  "icons": {
+    "48": "icons/line_style.png"
+  },
+
+  "browser_action": {
+    "default_icon": {
+      "19": "icons/line_style.png",
+      "38": "icons/line_style.png"
+    }
+  },
+
+  "background": {
+    "scripts": ["dist/background.js"]
+  },
+
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["dist/foreground.js"]
+  }],
+
+  "permissions": [
+    "activeTab",
+    "<all_urls>"
+  ]
+}
